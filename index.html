@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rethesh V S | AI, Edge AI and Mobile Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ece8ff;--ink:#1c1459;--mute:#5d588f;--tang:#ff6a3d;--tang-d:#c9441c;--mint:#1fbf94;--panel:rgba(255,255,255,.82);--line:rgba(28,20,89,.12);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main,nav,footer{position:relative;z-index:1}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);z-index:5;display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 12px 30px -16px rgba(28,20,89,.4);max-width:calc(100vw - 24px)}
+nav b{font:800 16px 'Bricolage Grotesque',sans-serif;padding:0 14px 0 12px;white-space:nowrap}
+nav a{position:relative;z-index:1;text-decoration:none;font-size:14px;font-weight:700;color:var(--mute);padding:8px 14px;border-radius:999px;--ty:0px;transform:perspective(400px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty));transition:color .2s,transform .12s ease-out}
+nav a:hover{color:var(--ink);--ty:-2px}
+nav a.on,nav a.on:hover{color:#fff}
+.pill{position:absolute;top:6px;bottom:6px;left:0;width:0;z-index:0;border-radius:999px;background:var(--ink);box-shadow:0 4px 0 #0b0733,0 10px 16px -6px rgba(28,20,89,.6);transition:left .45s cubic-bezier(.3,1.5,.5,1),width .45s cubic-bezier(.3,1.5,.5,1)}
+section{max-width:1160px;margin:auto;padding:104px clamp(20px,5vw,56px);will-change:transform}
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:130px}
+h1{font:800 clamp(56px,11vw,140px)/.95 'Bricolage Grotesque',sans-serif;letter-spacing:-.045em;text-shadow:0 .05em .1em rgba(28,20,89,.16)}
+.lead{max-width:26ch;margin-top:30px;font:500 clamp(22px,3vw,34px)/1.25 'Bricolage Grotesque',sans-serif}
+.sub{margin-top:12px;color:var(--mute);font-weight:500}
+.btns{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn{--d:7px;--edge:var(--tang-d);--ty:0px;--rx:0deg;--ry:0deg;position:relative;display:inline-block;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;background:var(--tang);color:#fff;transform:perspective(500px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));box-shadow:0 var(--d) 0 var(--edge),0 calc(var(--d) + 12px) 22px -8px rgba(28,20,89,.5);transition:transform .12s ease-out,box-shadow .12s}
+.btn::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .2s;background:radial-gradient(110px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.5),transparent 62%)}
+.btn:hover{--d:10px;--ty:-3px}
+.btn:hover::after{opacity:1}
+.btn:active{--d:1px;--ty:6px}
+.btn.alt{--edge:#c4bdee;background:#fff;color:var(--ink);border:1px solid var(--line)}
+h2{font:800 clamp(32px,4.6vw,52px)/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;margin-bottom:32px}
+.panel,.card{border:1px solid var(--line);border-radius:22px;background:var(--panel);box-shadow:0 24px 40px -28px rgba(28,20,89,.5)}
+.panel{--rx:0deg;--ry:0deg;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .15s ease-out}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+.about p{max-width:56ch;font-weight:500}
+.facts{display:grid;gap:16px;padding:28px}
+.facts dt{font-size:13px;color:var(--mute);font-weight:700}
+.facts dd{font-weight:700;margin-top:-6px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{--rx:0deg;--ry:0deg;--mx:50%;--my:0%;padding:28px;display:flex;flex-direction:column;gap:12px;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(255,106,61,.14),transparent 62%),var(--panel);transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .15s ease-out,border-color .2s}
+.card:hover{border-color:rgba(255,106,61,.5)}
+.card>*{transform:translateZ(22px)}
+.card h3{font:800 23px/1.15 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em}
+.card p{color:#3b3470;font-size:15.5px}
+.ev{align-self:flex-start;font-size:12.5px;font-weight:800;color:var(--tang-d);background:rgba(255,106,61,.12);padding:3px 12px;border-radius:999px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.tags span,.chips span{--rx:0deg;--ry:0deg;--ty:0px;display:inline-block;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px;background:rgba(31,191,148,.15);color:#0b6a52;box-shadow:0 3px 0 rgba(11,106,82,.22);transform:perspective(300px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));transition:transform .12s ease-out,box-shadow .12s}
+.tags span:hover,.chips span:hover{--ty:-3px;box-shadow:0 6px 0 rgba(11,106,82,.22)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.skills .panel{padding:24px;display:flex;flex-direction:column;gap:14px}
+.skills b{font:800 19px 'Bricolage Grotesque',sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px}
+.cta{padding:clamp(28px,5vw,56px);display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.cta p{color:var(--mute);font-weight:500}
+.cta .btns{margin-top:4px}
+footer{padding:30px;text-align:center;color:var(--mute);font-size:14px}
+@media(max-width:1000px){.grid,.skills{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.about{grid-template-columns:1fr}nav b{display:none}nav a{padding:8px 11px}}
+@media(max-width:640px){.grid,.skills{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn,.pill,.panel,nav a,.tags span,.chips span{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<nav><b>Rethesh V S</b><a href="#hero" class="on">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+<main>
+<section id="hero">
+<h1>Rethesh V S</h1>
+<p class="lead">I build AI that runs on real hardware, and the apps that make it useful.</p>
+<p class="sub">CS Engineering student at KPRIET, Coimbatore. Campus Captain 2026-27.</p>
+<div class="btns"><a class="btn" href="#projects">View projects</a><a class="btn alt" href="#contact">Contact me</a></div>
+</section>
+
+<section id="about">
+<h2>About me</h2>
+<div class="about">
+<p>I'm a Computer Science Engineering student at KPRIET with a CGPA of 8.9. I'm focused on AI/ML, MLOps and Edge AI because I like work where hardware and software meet. I build hackathon projects, mobile apps and embedded systems, and I'm also interested in startups and the food business.</p>
+<dl class="facts panel">
+<div><dt>College</dt><dd>KPR Institute of Engineering and Technology</dd></div>
+<div><dt>Program</dt><dd>Applied AI &amp; ML Essentials, Masai School / IITP</dd></div>
+<div><dt>Certifications</dt><dd>Fortinet NSE 1 and NSE 2</dd></div>
+<div><dt>Role</dt><dd>Campus Captain, 2026-27</dd></div>
+</dl>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+<article class="card"><span class="ev">National Hackathon 2026</span><h3>EcoLoop</h3><p>A smart recycling station for campus. An AI camera, weight sensor and metal detector verify each plastic deposit, and students earn credits to spend on campus. Received seed funding from the college.</p><div class="tags"><span>Raspberry Pi</span><span>YOLO-nano</span><span>React Native</span></div></article>
+<article class="card"><span class="ev">Smart India Hackathon 2026</span><h3>Q-Core Pi</h3><p>An education-first quantum IDE. Students build and run quantum circuits, and a Gemini-based AI mentor explains errors and suggests the next step. Cleared the college's internal round.</p><div class="tags"><span>Next.js</span><span>FastAPI</span><span>Qiskit</span><span>Gemini</span></div></article>
+<article class="card"><span class="ev">iQOO City Battles</span><h3>SmartGuard</h3><p>An Android app that recognizes who is using the phone at unlock and switches between child, teen and adult modes, with screen time per profile and parent-approved enrollment.</p><div class="tags"><span>Android</span><span>Face recognition</span></div></article>
+<article class="card"><span class="ev">Research simulation</span><h3>Self-driving car security</h3><p>A CARLA simulation that shows how sensor attacks and faults degrade a self-driving car, with fault injection, a PID controller, camera lane detection and a live dashboard.</p><div class="tags"><span>Python</span><span>CARLA</span><span>Flask</span><span>OpenCV</span></div></article>
+<article class="card"><span class="ev">Embedded project</span><h3>Smart Parking System</h3><p>A parking monitoring mini project on ESP32, and where my interest in Edge AI started.</p><div class="tags"><span>ESP32</span><span>IoT</span></div></article>
+<article class="card"><span class="ev">Food business</span><h3>Mettur Night Biryani</h3><p>A food delivery app and manager portal for my own food business idea.</p><div class="tags"><span>Lovable</span><span>Supabase</span><span>PWA</span></div></article>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div class="panel"><b>Languages</b><div class="chips"><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></div>
+<div class="panel"><b>AI and ML</b><div class="chips"><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Gemini API</span><span>Google Colab</span></div></div>
+<div class="panel"><b>Mobile and web</b><div class="chips"><span>Android Studio</span><span>App development</span><span>Bootstrap</span><span>React Native</span></div></div>
+<div class="panel"><b>Edge and embedded</b><div class="chips"><span>ESP32</span><span>Raspberry Pi</span></div></div>
+<div class="panel"><b>Tools</b><div class="chips"><span>Git</span><span>GitHub</span></div></div>
+<div class="panel"><b>Security</b><div class="chips"><span>Fortinet NSE 1</span><span>Fortinet NSE 2</span></div></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="cta panel">
+<h2 style="margin:0">Let's build something</h2>
+<p>retinitialworks@gmail.com | Coimbatore, Tamil Nadu, India</p>
+<div class="btns"><a class="btn" href="mailto:retinitialworks@gmail.com">Email me</a><a class="btn alt" href="https://github.com/Retheshvs" target="_blank" rel="noopener">GitHub</a><a class="btn alt" href="https://www.linkedin.com/in/rethesh-v-s-049923380/" target="_blank" rel="noopener">LinkedIn</a></div>
+</div>
+</section>
+</main>
+<footer>Rethesh V S, 2026</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const R=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const secs=[...document.querySelectorAll('section')],links=[...document.querySelectorAll('nav a')];
+function tilt3d(){if(R)return;secs.forEach(s=>{const b=s.getBoundingClientRect(),d=Math.max(-1,Math.min(1,(b.top+b.height/2-innerHeight/2)/innerHeight));
+s.style.transform=`perspective(1500px) rotateX(${(d*-6).toFixed(2)}deg) translateZ(${(-Math.abs(d)*60).toFixed(0)}px)`})}
+addEventListener('scroll',tilt3d,{passive:true});addEventListener('resize',tilt3d);tilt3d();
+const nv=document.querySelector('nav'),pill=document.createElement('i');pill.className='pill';nv.prepend(pill);
+function movePill(){const a=nv.querySelector('a.on');if(a){pill.style.left=a.offsetLeft+'px';pill.style.width=a.offsetWidth+'px'}}
+function setOn(id){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));movePill()}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setOn(e.target.id)}),{rootMargin:'-45% 0px -50% 0px'});secs.forEach(s=>io.observe(s));
+links.forEach(a=>a.addEventListener('click',()=>setOn(a.getAttribute('href').slice(1))));
+addEventListener('resize',movePill);addEventListener('load',movePill);movePill();
+function bind(sel,m){if(R)return;document.querySelectorAll(sel).forEach(el=>{
+el.addEventListener('pointermove',e=>{const b=el.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;
+el.style.setProperty('--ry',((x-.5)*m).toFixed(1)+'deg');el.style.setProperty('--rx',((.5-y)*m).toFixed(1)+'deg');el.style.setProperty('--mx',(x*100).toFixed(0)+'%');el.style.setProperty('--my',(y*100).toFixed(0)+'%')});
+el.addEventListener('pointerleave',()=>{el.style.setProperty('--rx','0deg');el.style.setProperty('--ry','0deg')})})}
+bind('.card',10);bind('.btn',22);bind('nav a',16);bind('.tags span,.chips span',24);bind('.panel',4);
+
+try{
+const r=new THREE.WebGLRenderer({canvas:document.getElementById('bg'),antialias:true,alpha:true});
+r.setPixelRatio(Math.min(devicePixelRatio,2));
+const s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,.1,60);cam.position.set(0,0,12);
+const U={uT:{value:0},uA:{value:.6},uO:{value:1}};
+const mat=new THREE.ShaderMaterial({uniforms:U,transparent:true,vertexShader:`
+uniform float uT,uA;varying vec3 vN,vP;
+float h(vec3 p){return sin(p.x*1.7+uT)*sin(p.y*1.9+uT*1.2)*sin(p.z*1.6-uT*.8);}
+void main(){vec3 p=position;float d=(h(p)*.5+h(p*2.1+3.)*.14)*uA;p+=normal*d;
+vec2 e=vec2(.02,0.);vec3 g=vec3(h(position+e.xyy)-h(position-e.xyy),h(position+e.yxy)-h(position-e.yxy),h(position+e.yyx)-h(position-e.yyx))/.04;
+vec3 n=normalize(normal-(g-dot(g,normal)*normal)*.5*uA);
+vN=normalize(normalMatrix*n);vec4 mv=modelViewMatrix*vec4(p,1.);vP=mv.xyz;gl_Position=projectionMatrix*mv;}`,
+fragmentShader:`
+uniform float uT,uO;varying vec3 vN,vP;
+void main(){vec3 n=normalize(vN),v=normalize(-vP),L=normalize(vec3(.4,.8,.6));
+float f=pow(1.-max(dot(n,v),0.),2.2);
+vec3 a=vec3(1.,.416,.239),b=vec3(1.,.56,.69),c=vec3(.18,.83,.65),d=vec3(.11,.08,.35);
+float k=n.y*.5+.5+.25*sin(n.x*2.+uT*.5);
+vec3 col=mix(mix(d,c,smoothstep(0.,.45,k)),mix(b,a,smoothstep(.55,1.,k)),smoothstep(.35,.7,k));
+col*=.75+.5*max(dot(n,L),0.);col+=f*vec3(1.,.95,.98)*.5;
+col+=pow(max(dot(n,normalize(L+v)),0.),48.)*.55;gl_FragColor=vec4(col,uO);}`});
+const rig=new THREE.Group();s.add(rig);
+rig.add(new THREE.Mesh(new THREE.SphereGeometry(2.1,128,96),mat));
+const ring=new THREE.Mesh(new THREE.TorusGeometry(3.3,.02,8,200),new THREE.MeshBasicMaterial({color:0x1c1459,transparent:true,opacity:.3}));
+ring.rotation.x=1.25;ring.rotation.y=.3;rig.add(ring);
+let mx=0,my=0,wide=true;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function size(){const w=innerWidth,h=innerHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();wide=w>800;U.uO.value=wide?1:.4}
+size();addEventListener('resize',size);
+// orb path per section: hero, about, projects, skills, contact
+const PX=[3.8,4.2,4.8,4.2,0],PY=[0,-.3,2.6,-.2,2.4],PS=[1,.85,.45,.85,.6];
+let cx=3.8,cy=0,cs=1,sy=0;const t0=performance.now();
+function f(now){const t=(now-t0)/1000,k=Math.min(t/2,1),e=1-Math.pow(1-k,3);
+const sc=scrollY/Math.max(document.body.scrollHeight-innerHeight,1);
+const ys=secs.map(x=>x.offsetTop+x.offsetHeight/2),y=scrollY+innerHeight/2;
+let i=0;while(i<ys.length-2&&y>ys[i+1])i++;
+const u=Math.max(0,Math.min(1,(y-ys[i])/(ys[i+1]-ys[i]))),j=Math.min(i+1,4),L=a=>a[i]+(a[j]-a[i])*u;
+const tx=wide?L(PX):0,ty=wide?L(PY):2.4,ts=(wide?L(PS):.55);
+cx+=(tx-cx)*.07;cy+=(ty-cy)*.07;cs+=(ts-cs)*.07;
+U.uT.value=R?1:t*.7;U.uA.value=.5+Math.sin(sc*Math.PI)*.5+Math.abs(mx)*.3;
+sy+=(sc*4-sy)*.06;
+rig.rotation.y=sy+mx*.6;rig.rotation.x=my*.3;ring.rotation.z=R?0:t*.2;
+rig.position.set(cx,cy+(R?0:Math.sin(t*.8)*.15),0);
+rig.scale.setScalar(cs*(.2+.8*e));
+r.render(s,cam);requestAnimationFrame(f)}
+requestAnimationFrame(f);
+}catch(err){console.warn('3D scene unavailable',err)}
+</script>
+</body>
+</html>
